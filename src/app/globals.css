@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-ivory: #FAF7F3;
+    --bg-secondary: #F5EEE8;
+    --bg-card: #FFFFFF;
+    --text-primary: #171717;
+    --text-secondary: #66615D;
+    --text-muted: #8E8883;
+    --gold: #B8893D;
+    --gold-light: #D2A96A;
+    --gold-subtle: #F3EBDD;
+    --blush: #D98991;
+    --rose-btn: #C8747C;
+    --border-color: #E8E0D8;
+    --border-light: #F0EAE4;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-ivory);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: var(--bg-ivory);
+    color: var(--text-primary);
+  }
+
+  ::selection {
+    background-color: #F3EBDD;
+    color: #B8893D;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Luxury Utility Styles */
+.font-serif-luxury {
+  font-family: var(--font-serif), Georgia, 'Times New Roman', serif;
+}
+
+.font-sans-luxury {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bg-ivory {
+  background-color: var(--bg-ivory);
+}
+
+.bg-secondary-ivory {
+  background-color: var(--bg-secondary);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-light {
+  color: var(--gold-light);
+}
+
+.text-blush {
+  color: var(--blush);
+}
+
+.border-subtle {
+  border-color: var(--border-color);
+}
+
+.border-light {
+  border-color: var(--border-light);
+}
+
+.shadow-luxury {
+  box-shadow: 0 15px 50px rgba(40, 30, 20, 0.06);
+}
+
+.shadow-luxury-hover {
+  box-shadow: 0 25px 60px rgba(40, 30, 20, 0.12);
+}
+
+.shadow-card {
+  box-shadow: 0 10px 30px rgba(40, 30, 20, 0.04);
+}
+
+/* Smooth floating animation for perfume bottle */
+@keyframes luxuryFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.005);
+  }
+}
+
+.animate-luxury-float {
+  animation: luxuryFloat 6s ease-in-out infinite;
+}
+
+/* Subtle pulse for glow */
+@keyframes subtleGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.animate-subtle-glow {
+  animation: subtleGlow 8s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
