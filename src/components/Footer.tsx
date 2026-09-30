@@ -30,7 +30,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LUXÉO on Instagram"
+                aria-label="Al Munzir on Instagram"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-[#E8E0D8] flex items-center justify-center text-[#171717] hover:text-[#B8893D] hover:border-[#B8893D] transition-all shadow-2xs group"
               >
                 <svg
@@ -50,7 +50,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LUXÉO on Facebook"
+                aria-label="Al Munzir on Facebook"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-[#E8E0D8] flex items-center justify-center text-[#171717] hover:text-[#B8893D] hover:border-[#B8893D] transition-all shadow-2xs group"
               >
                 <svg
@@ -68,7 +68,7 @@ export default function Footer() {
                 href="https://pinterest.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LUXÉO on Pinterest"
+                aria-label="Al Munzir on Pinterest"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-[#E8E0D8] flex items-center justify-center text-[#171717] hover:text-[#B8893D] hover:border-[#B8893D] transition-all shadow-2xs group"
               >
                 <svg
@@ -182,7 +182,7 @@ export default function Footer() {
               <address className="not-italic text-[12px] sm:text-[12.5px] text-[#66615D] space-y-1 sm:space-y-1.5">
                 <p>24 Rue de la Paix</p>
                 <p>75002 Paris, France</p>
-                <p className="pt-1.5 text-[#171717] font-medium break-all">concierge@luxeo.com</p>
+                <p className="pt-1.5 text-[#171717] font-medium break-all">info@almunzirfragrance.com</p>
               </address>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs text-[#8E8883] text-center sm:text-left">
-          <p>© 2026 Luxéo Perfumes. All rights reserved.</p>
+          <p>© 2026 Al Munzir Fragrance. All rights reserved.</p>
 
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="tracking-widest uppercase text-[9.5px] sm:text-[10px]">PARIS · LONDON · DUBAI</span>

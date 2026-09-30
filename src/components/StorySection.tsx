@@ -30,7 +30,7 @@ export default function StorySection() {
             <div className="w-12 h-[2px] bg-[#B8893D] mb-6 rounded-full" />
 
             <p className="text-[#66615D] text-base sm:text-[17px] leading-[1.75] font-normal mb-8">
-              Every bottle of Luxéo is a story bottled in a moment. A blend of nature’s finest and the expertise of master perfumers.
+              Every bottle of Al Munzir is a story bottled in a moment. A blend of nature’s finest and the expertise of master perfumers.
             </p>
 
             <div>
@@ -50,7 +50,7 @@ export default function StorySection() {
             <div className="relative w-full aspect-[3/2] max-h-[460px] rounded-[24px] md:rounded-[36px] overflow-hidden shadow-[0_20px_60px_rgba(40,30,20,0.12)] border border-white/60 group">
               <Image
                 src="/images/story-still-life.jpg"
-                alt="LUXÉO perfume still life with blood orange, amber crystal, and cherry blossoms on driftwood"
+                alt="Al Munzir perfume still life with blood orange, amber crystal, and cherry blossoms on driftwood"
                 fill
                 sizes="(max-width: 1024px) 100vw, 700px"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

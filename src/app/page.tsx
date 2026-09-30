@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Benefits from '@/components/Benefits';
 import Collection from '@/components/Collection';
+import AtmosphereBanner from '@/components/AtmosphereBanner';
 import StorySection from '@/components/StorySection';
 import Stats from '@/components/Stats';
 import WhyLuxeo from '@/components/WhyLuxeo';
@@ -26,13 +27,16 @@ export default function Home() {
       {/* Collection Section with Carousel */}
       <Collection />
 
+      {/* Cinematic Fragrance Atmosphere Banner */}
+      <AtmosphereBanner />
+
       {/* Our Story Editorial Split Section */}
       <StorySection />
 
       {/* Floating Trust / Statistics Bar */}
       <Stats />
 
-      {/* Why Luxéo: The Art Behind Every Scent */}
+      {/* Why Al Munzir: The Art Behind Every Scent */}
       <WhyLuxeo />
 
       {/* Interactive Olfactory Note Pyramid Explorer */}

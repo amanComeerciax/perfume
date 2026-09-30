@@ -40,7 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="relative w-full aspect-[4/5] my-2 bg-[#FBF9F7] rounded-[8px] overflow-hidden flex items-center justify-center">
         <Image
           src={product.image}
-          alt={`LUXÉO ${product.name} Eau De Parfum`}
+          alt={`Al Munzir ${product.name} Eau De Parfum`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
           className="object-contain p-3 transition-transform duration-600 ease-out group-hover:scale-108"

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 
 export default function LuxuryPreloader() {
@@ -92,53 +93,21 @@ export default function LuxuryPreloader() {
       <div className="absolute w-[500px] h-[500px] bg-[#F0E4D4] rounded-full blur-3xl opacity-50 pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Animated Gold Monogram */}
-        <div ref={logoRef} className="w-16 h-16 sm:w-20 sm:h-20 mb-6 text-[#B8893D]">
-          <svg
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full drop-shadow-[0_4px_12px_rgba(184,137,61,0.25)]"
-          >
-            <path
-              d="M20 3L35 12V28L20 37L5 28V12L20 3Z"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M20 3V37"
-              stroke="currentColor"
-              strokeWidth="1"
-              strokeDasharray="2 2"
-              className="opacity-60"
-            />
-            <path
-              d="M11 15L20 20.5L29 15"
-              stroke="currentColor"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M11 25L20 19.5L29 25"
-              stroke="currentColor"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <circle cx="20" cy="20" r="2.2" fill="currentColor" />
-          </svg>
+        {/* Al Munzir Logo */}
+        <div ref={logoRef} className="w-48 h-48 sm:w-56 sm:h-56 mb-6 relative">
+          <Image
+            src="/images/al-munzir-logo.png"
+            alt="Al Munzir Fragrance"
+            fill
+            className="object-contain drop-shadow-[0_4px_12px_rgba(184,137,61,0.25)]"
+            priority
+          />
         </div>
 
         {/* Brand Name */}
         <div ref={textRef} className="text-center mb-8">
-          <h1 className="font-serif-luxury text-3xl sm:text-4xl text-[#171717] font-normal uppercase">
-            LUXÉO
-          </h1>
           <p className="font-sans-luxury text-[10px] tracking-[0.45em] text-[#B8893D] uppercase mt-1">
-            HAUTE PARFUMERIE · PARIS · GRASSE
+            LUXURY PERFUMERY · ESSENCE OF ELEGANCE
           </p>
         </div>
 

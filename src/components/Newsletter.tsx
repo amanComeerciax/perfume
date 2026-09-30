@@ -50,7 +50,7 @@ export default function Newsletter() {
               <Check className="w-3.5 h-3.5" />
             </div>
             <span className="font-medium tracking-wide">
-              Welcome to the Luxéo Circle. Check your inbox for private access.
+              Welcome to the Al Munzir Circle. Check your inbox for private access.
             </span>
           </div>
         ) : (

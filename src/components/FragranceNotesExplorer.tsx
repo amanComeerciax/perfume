@@ -27,7 +27,7 @@ export default function FragranceNotesExplorer() {
             Explore Note Architecture
           </h2>
           <p className="text-[#66615D] text-sm sm:text-base mt-3 max-w-lg mx-auto">
-            Each Luxéo fragrance unfolds in three distinct olfactory stages from opening burst to enduring dry-down.
+            Each Al Munzir fragrance unfolds in three distinct olfactory stages from opening burst to enduring dry-down.
           </p>
         </div>
 

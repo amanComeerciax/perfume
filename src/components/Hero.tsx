@@ -101,7 +101,7 @@ export default function Hero() {
       if (lineRef.current) {
         tl.fromTo(
           lineRef.current,
-          { scaleX: 0, opacity: 0, transformOrigin: 'left center' },
+          { scaleX: 0, opacity: 0, transformOrigin: 'center center' },
           { scaleX: 1, opacity: 1, duration: 0.7 },
           0.7
         );
@@ -169,7 +169,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full min-h-[640px] md:min-h-[720px] lg:min-h-[780px] xl:min-h-[820px] pt-24 sm:pt-32 md:pt-36 lg:pt-40 pb-16 sm:pb-24 md:pb-28 lg:pb-32 flex items-center overflow-hidden bg-[#FAF7F3]"
+      className="relative w-full min-h-[640px] md:min-h-[700px] lg:min-h-[760px] xl:min-h-[800px] pt-24 sm:pt-28 md:pt-32 lg:pt-32 xl:pt-36 pb-12 sm:pb-16 md:pb-20 lg:pb-20 xl:pb-24 flex items-center overflow-hidden bg-[#FAF7F3]"
     >
       {/* ===== DESKTOP ONLY: FULL-BLEED COMPOSITED SCENE (lg:block) ===== */}
       <div
@@ -177,14 +177,16 @@ export default function Hero() {
         className="hidden lg:block absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none origin-left"
       >
         <Image
-          src="/images/hero-scene-perfect.jpg"
-          alt="LUXÉO Perfumes Hero Scene"
+          src="/images/heos.png"
+          alt="Al Munzir Perfumes Hero Scene"
           fill
           priority
-          quality={95}
+          unoptimized
           className="object-cover scale-[1.02] origin-left"
           style={{ objectPosition: '0% center' }}
         />
+        {/* Soft luxury gradient scrim on desktop to guarantee 100% text readability */}
+        <div className="absolute inset-y-0 left-0 w-[58%] xl:w-[50%] bg-gradient-to-r from-[#FAF7F3]/95 via-[#FAF7F3]/65 to-transparent pointer-events-none" />
       </div>
 
       {/* ===== MOBILE ONLY: SUBTLE AMBIENT WARMTH BACKGROUND ===== */}
@@ -197,11 +199,11 @@ export default function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Real Typography, Heading & Actions */}
-          <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center text-left">
+          <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
             {/* Eyebrow */}
             <span
               ref={eyebrowRef}
-              className="font-sans-luxury text-[11.5px] sm:text-[12px] font-semibold tracking-[2.5px] sm:tracking-[3px] text-[#B8893D] uppercase mb-3 sm:mb-4 block"
+              className="font-sans-luxury text-[11px] sm:text-[12px] font-bold tracking-[3px] text-[#A07430] uppercase mb-3.5 sm:mb-4 block drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
             >
               {current.eyebrow}
             </span>
@@ -209,50 +211,76 @@ export default function Hero() {
             {/* Main Heading matching Reference */}
             <h1
               ref={headingRef}
-              className="font-serif-luxury text-[38px] sm:text-[52px] md:text-[62px] lg:text-[72px] leading-[1.05] sm:leading-[1.04] font-medium text-[#171717] tracking-[-0.01em] mb-4 sm:mb-5"
+              className="font-serif-luxury text-[36px] xs:text-[42px] sm:text-[50px] md:text-[56px] lg:text-[62px] xl:text-[70px] leading-[1.06] font-medium text-[#141210] tracking-[-0.01em] mb-4 sm:mb-5 drop-shadow-[0_1px_2px_rgba(255,255,255,0.6)]"
             >
               <span className="block">{current.titleLine1}</span>
               <span className="block italic font-light">{current.titleLine2}</span>
             </h1>
 
             {/* Gold Decorative Line */}
-            <div ref={lineRef} className="w-12 h-[2px] bg-[#B8893D] mb-4 sm:mb-5 rounded-full" />
+            <div ref={lineRef} className="w-14 h-[2px] bg-[#B8893D] mb-4 sm:mb-5 rounded-full mx-auto lg:mx-0 shadow-[0_1px_3px_rgba(184,137,61,0.3)]" />
 
             {/* Supporting Description */}
             <p
               ref={descRef}
-              className="font-sans-luxury text-[#66615D] text-[14.5px] sm:text-[16px] leading-[1.7] max-w-[460px] font-normal mb-6 sm:mb-8"
+              className="font-sans-luxury text-[#23201D] text-[14.5px] sm:text-[15.5px] lg:text-[16px] leading-[1.75] max-w-[480px] font-normal mb-7 sm:mb-8 mx-auto lg:mx-0 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
             >
               {current.description}
             </p>
 
+            {/* ===== MOBILE ONLY: BOTTLE DISPLAY (ABOVE BUTTONS) ===== */}
+            <div
+              ref={mobileBottleRef}
+              className="lg:hidden flex flex-col items-center justify-center pt-1 pb-6 cursor-pointer"
+              onClick={() => openQuickView(current.product)}
+            >
+              <div className="relative w-[280px] h-[340px] xs:w-[310px] xs:h-[370px] flex items-center justify-center">
+                {/* Soft pedestal base glow */}
+                <div className="absolute bottom-2 w-48 h-8 bg-[#D4A359]/20 rounded-full blur-md" />
+                <Image
+                  src="/images/mainbottle.png"
+                  alt="Al Munzir Signature Eau De Parfum"
+                  fill
+                  priority
+                  unoptimized
+                  className="object-contain drop-shadow-[0_20px_35px_rgba(40,30,20,0.18)]"
+                />
+              </div>
+              <span className="text-[11px] text-[#B8893D] font-medium tracking-[0.2em] uppercase mt-2">
+                Tap to view details · 100ml
+              </span>
+            </div>
+
             {/* CTA Buttons */}
-            <div ref={ctaRef} className="flex flex-wrap items-center gap-3.5 sm:gap-5 mb-8 sm:mb-10">
+            <div
+              ref={ctaRef}
+              className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-7 sm:mb-8 w-full max-w-[420px] lg:max-w-none mx-auto lg:mx-0"
+            >
               <Button
                 variant="gold"
                 size="lg"
                 onClick={scrollToCollection}
-                className="font-sans-luxury px-6 sm:px-8 py-3.5 text-[11.5px] sm:text-[12px] font-semibold tracking-[1px] rounded-[4px]"
+                className="font-sans-luxury flex-1 sm:flex-none justify-center px-4 xs:px-6 sm:px-8 py-3.5 text-[11px] xs:text-[11.5px] sm:text-[12px] font-semibold tracking-[1px] rounded-[4px] whitespace-nowrap text-center shadow-md"
               >
                 EXPLORE COLLECTION
               </Button>
 
               <button
                 onClick={() => setIsStoryModalOpen(true)}
-                className="font-sans-luxury inline-flex items-center gap-2.5 sm:gap-3 px-5 py-3 rounded-[4px] border border-[#171717]/30 text-[#171717] bg-white/80 backdrop-blur-xs hover:border-[#171717] hover:bg-white transition-all duration-300 group text-[11.5px] sm:text-[12px] font-semibold tracking-[1px] uppercase cursor-pointer"
+                className="font-sans-luxury flex-1 sm:flex-none justify-center inline-flex items-center gap-2.5 sm:gap-3 px-4 xs:px-5 sm:px-6 py-3.5 rounded-[4px] border border-[#171717]/40 text-[#171717] bg-white/95 backdrop-blur-md hover:border-[#171717] hover:bg-white transition-all duration-300 group text-[11px] xs:text-[11.5px] sm:text-[12px] font-semibold tracking-[1px] uppercase cursor-pointer whitespace-nowrap shadow-xs"
                 aria-label="Play our story video"
               >
                 <span>OUR STORY</span>
-                <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-[#171717]/40 flex items-center justify-center group-hover:border-[#B8893D] group-hover:text-[#B8893D] transition-colors">
+                <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-[#171717]/40 flex items-center justify-center group-hover:border-[#B8893D] group-hover:text-[#B8893D] transition-colors shrink-0">
                   <Play className="w-2 sm:w-2.5 h-2 sm:h-2.5 fill-current ml-0.5" />
                 </span>
               </button>
             </div>
 
-            {/* Slide Indicators: 01 — 02 — 03 */}
+            {/* Slide Indicators: 01 — 02 — 03 in Luxury Frosted Pill Badge */}
             <div
               ref={indicatorRef}
-              className="flex items-center gap-3 text-xs tracking-[0.2em] font-medium select-none mb-6 lg:mb-0"
+              className="inline-flex items-center justify-center lg:justify-start gap-3 text-xs tracking-[0.2em] font-medium select-none px-4 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#E8E0D8] shadow-[0_2px_12px_rgba(40,30,20,0.06)]"
             >
               {slides.map((_, idx) => {
                 const num = `0${idx + 1}`;
@@ -263,41 +291,19 @@ export default function Hero() {
                       onClick={() => setActiveSlide(idx)}
                       className={`transition-all duration-300 cursor-pointer ${isActive
                         ? 'text-[#B8893D] font-bold scale-110'
-                        : 'text-[#8E8883] hover:text-[#171717]'
+                        : 'text-[#443E38] hover:text-[#171717]'
                         }`}
                       aria-label={`Slide ${num}`}
                     >
                       {num}
                     </button>
                     {idx < slides.length - 1 && (
-                      <span className="text-[#D8D0C7] font-light">—</span>
+                      <span className="text-[#C5BBB0] font-light">—</span>
                     )}
                   </React.Fragment>
                 );
               })}
             </div>
-          </div>
-
-          {/* ===== MOBILE ONLY: BEAUTIFUL CENTERED PRODUCT BOTTLE DISPLAY ===== */}
-          <div
-            ref={mobileBottleRef}
-            className="lg:hidden flex flex-col items-center justify-center pt-2 pb-4 cursor-pointer"
-            onClick={() => openQuickView(current.product)}
-          >
-            <div className="relative w-[280px] h-[340px] xs:w-[310px] xs:h-[370px] flex items-center justify-center">
-              {/* Soft pedestal base glow */}
-              <div className="absolute bottom-2 w-48 h-8 bg-[#D4A359]/20 rounded-full blur-md" />
-              <Image
-                src="/images/herobottle.png"
-                alt="LUXÉO Signature Eau De Parfum"
-                fill
-                priority
-                className="object-contain drop-shadow-[0_20px_35px_rgba(40,30,20,0.18)]"
-              />
-            </div>
-            <span className="text-[11px] text-[#B8893D] font-medium tracking-[0.2em] uppercase mt-2">
-              Tap to view details · 100ml
-            </span>
           </div>
 
           {/* Desktop Right Column: Clickable Bottle Region */}

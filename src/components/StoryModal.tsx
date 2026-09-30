@@ -48,7 +48,7 @@ export default function StoryModal() {
           <div className="relative w-full aspect-[16/9] rounded-[14px] overflow-hidden mb-8 shadow-inner bg-black">
             <Image
               src="/images/craft-perfumer.jpg"
-              alt="Master perfumer at work in Luxéo atelier"
+              alt="Master perfumer at work in Al Munzir atelier"
               fill
               className="object-cover opacity-90"
             />

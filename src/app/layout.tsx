@@ -23,9 +23,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'LUXÉO PERFUMES | Essence of Elegance — Luxury Fragrance Atelier',
+  title: 'AL MUNZIR FRAGRANCE | Essence of Elegance — Luxury Fragrance Atelier',
   description:
-    'Discover LUXÉO luxury perfumes. Crafted with the world’s rarest ingredients to bring you timeless scents that define your presence.',
+    'Discover Al Munzir luxury perfumes. Crafted with the world’s rarest ingredients to bring you timeless scents that define your presence.',
   keywords: [
     'luxury perfume',
     'niche fragrance',
@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     'haute perfumery'
   ],
   openGraph: {
-    title: 'LUXÉO PERFUMES | Essence of Elegance',
+    title: 'AL MUNZIR FRAGRANCE | Essence of Elegance',
     description:
       'Crafted with the world’s finest ingredients to bring you timeless scents that leave a lasting impression.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'LUXÉO PERFUMES'
+    siteName: 'AL MUNZIR FRAGRANCE'
   },
   icons: {
     icon: [
